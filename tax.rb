@@ -3,7 +3,6 @@ class Input
     array = []
     puts "please enter the number of inputs"
     a = gets.chomp.to_i
-    i = 0
     sum1 = 0
     sum2 = 0
     sum = 0
