@@ -39,8 +39,9 @@ class Input
         end
       elsif array[i].split.include?("book") || array[i].split.include?("chocolates") || array[i].split.include?("pills" ) || array[i].split.include?( "chocolate")
         array[i] = array[i]
-        k = '%.2f' %[c.to_f].round(2)
-        k4 = k4.to_f + k.to_f 
+        k = '%.2f' %[c.to_f]
+        k4 = (k4.to_f + k.to_f).round(2)
+        array[i] = array[i].split()
       else
         d = '%.2f' %[(c.to_f*10)/100.0]
         k = (c.to_f + d.to_f).round(2)
