@@ -40,13 +40,9 @@ class SalesTaxes
     tax = 0
     tax_exclude = []
     tax_exclude = product.split(" ") & TAX_EXCEPT_ITEMS
-    if product.include?('imported')
-      tax = price.to_f * 0.05
-    end
-    if tax_exclude.count != 1
-      tax = (price.to_f * 0.10) + tax.to_f
-    end
-    return tax
+    tax = price.to_f * 0.05 if product.include?('imported')
+    tax = (price.to_f * 0.10) + tax.to_f if tax_exclude.count != 1
+    tax
   end
 end
 
